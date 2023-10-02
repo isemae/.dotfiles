@@ -1,0 +1,37 @@
+[user]
+	name = isemae
+	email = foxlis97@naver.com
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /Users/ji/.gitignore_global
+  pager = delta
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pull]
+	rebase = true
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[delta]
+    features = decorations
+    navigate = true
+    side-by-side = true
+    true-color = always
+[merge]
+    conflictstyle = diff3
+[diff]
+  colorMoved = default
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
