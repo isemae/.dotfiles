@@ -134,6 +134,7 @@ function instant_prompt_arch() {
 alias vim="nvim"
 alias vi="nvim"
 
+alias czm="chezmoi"
 # alias ls='ls --color=auto'
 alias la="lsd -a"
 alias lf="lsd -Fla"
