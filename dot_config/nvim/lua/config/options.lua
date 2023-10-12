@@ -60,8 +60,13 @@ opt.fillchars = {
   eob = " ",
 }
 vim.opt.fillchars = {
-  vert = "▏",
-  horiz = "▁",
+  vert = "🮇",
+  vertright = "🮇",
+  vertleft = "🮇",
+  verthoriz = "🮇",
+  horiz = "▔",
+  horizup = "▔",
+  horizdown = "▔",
 }
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
