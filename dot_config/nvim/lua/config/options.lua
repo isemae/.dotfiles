@@ -60,10 +60,10 @@ opt.fillchars = {
   eob = " ",
 }
 vim.opt.fillchars = {
-  vert = "🮇",
-  vertright = "🮇",
-  vertleft = "🮇",
-  verthoriz = "🮇",
+  vert = "▕",
+  vertright = "▕",
+  vertleft = "▕",
+  verthoriz = "▕",
   horiz = "▔",
   horizup = "▔",
   horizdown = "▔",

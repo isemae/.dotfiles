@@ -2,7 +2,10 @@ return {
   -- add gruvbox
   {
     "rebelot/kanagawa.nvim",
-    colors = {},
+    colors = {
+
+      palette = {},
+    },
     overrides = function(colors)
       local theme = colors.theme
       return {

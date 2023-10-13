@@ -7,6 +7,13 @@ return {
   },
   opts = {
     highlights = {
+      fill = {
+        bg = "#18171E",
+      },
+      offset_separator = {
+        bg = "#1F1F27",
+      },
+
       buffer_selected = { bold = true, italic = false },
       -- diagnostics_selected = { italic = false },
       -- hint_selected = { italic = false },
@@ -51,7 +58,7 @@ return {
           end,
           highlight = PanelHeading,
           text_align = "left",
-          separator = "🮇",
+          separator = "▕",
         },
       },
 
