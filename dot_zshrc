@@ -89,7 +89,6 @@ export LANG=en_US.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -109,10 +108,20 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
-bindkey "[D" backward-word
-bindkey "[C" forward-word
-bindkey "^[e" end-of-line
-bindkey "^[a" beginning-of-line
+
+# Bindings
+bindkey  "^[[D" "^[^[[D"
+bindkey  "^[[C" "^[^[[C"
+# bindkey  "^[e" "^E"
+# bindkey  "^[a" "^A"
+# bindkey  "^[F" "^F"
+# bindkey  "^[b" "^B"
+# bindkey "^[e" end-of-line
+# bindkey "^[a" beginning-of-line
+#
+# bindkey "^[F" forward-word
+# bindkey "^[b" backward-word
+
 if [[ $(arch) == "arm64" ]]; then
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
   else
@@ -131,16 +140,29 @@ function instant_prompt_arch() {
   prompt_arch
 }
 
+# nvim
 alias vim="nvim"
 alias vi="nvim"
 
+# chezmoi
 alias czm="chezmoi"
+alias cz="chezmoi"
+
+# yazi
+alias yz="yazi"
+
 # alias ls='ls --color=auto'
 alias la="lsd -a"
 alias lf="lsd -Fla"
 alias ls="lsd"
 
+# thefuck
+alias fk="thefuck"
+# yt-dlp
+alias dlp="yt-dlp"
 
 # Fig post block. Keep at the bottom of this file.
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+eval $(thefuck --alias)
