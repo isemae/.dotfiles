@@ -7,12 +7,12 @@ return {
   },
   opts = {
     highlights = {
-      fill = {
-        bg = "#18171E",
-      },
-      offset_separator = {
-        bg = "#1F1F27",
-      },
+      -- fill = {
+      --   bg = "#18171E",
+      -- },
+      -- offset_separator = {
+      --   bg = "#1F1F27",
+      -- },
 
       buffer_selected = { bold = true, italic = false },
       -- diagnostics_selected = { italic = false },

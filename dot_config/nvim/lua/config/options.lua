@@ -26,7 +26,7 @@ opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.relativenumber = true -- Relative line numbers
+opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.shiftround = true -- Round indent
@@ -58,8 +58,6 @@ opt.fillchars = {
   foldsep = " ",
   diff = "╱",
   eob = " ",
-}
-vim.opt.fillchars = {
   vert = "▕",
   vertright = "▕",
   vertleft = "▕",
