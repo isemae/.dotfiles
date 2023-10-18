@@ -14,6 +14,8 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
+opt.enc = "UTF-8"
+opt.fileencodings = "UTF-8"
 opt.expandtab = true -- Use spaces instead of tabs
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
@@ -49,7 +51,7 @@ opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = false -- Disable line wrap
+opt.wrap = true -- line wrap
 opt.fillchars = {
   foldopen = "",
   foldclose = "",
@@ -69,7 +71,34 @@ opt.fillchars = {
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
 end
-
+opt.langmap = {
+  "ㅁa",
+  "ㅠb",
+  "ㅊc",
+  "ㅇd",
+  "ㄷe",
+  "ㄹf",
+  "ㅎg",
+  "ㅗh",
+  "ㅑi",
+  "ㅓj",
+  "ㅏk",
+  "ㅣl",
+  "ㅡm",
+  "ㅜn",
+  "ㅐo",
+  "ㅔp",
+  "ㅂq",
+  "ㄱr",
+  "ㄴs",
+  "ㅅt",
+  "ㅕu",
+  "ㅍv",
+  "ㅈw",
+  "ㅌx",
+  "ㅛy",
+  "ㅋz",
+}
 -- Folding
 vim.opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.require'lazyvim.util.ui'.foldtext()"

@@ -161,6 +161,9 @@ alias fk="thefuck"
 # yt-dlp
 alias dlp="yt-dlp"
 
+#python
+alias python="python3"
+alias py="python3"
 # Fig post block. Keep at the bottom of this file.
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

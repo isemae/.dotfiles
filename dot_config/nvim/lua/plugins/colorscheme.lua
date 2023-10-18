@@ -155,7 +155,15 @@ return {
       MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 
       -- telescope
-      TelescopeTitle = { fg = theme.ui.special, bold = true },
+      TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
+      TelescopeTitle = { fg = theme.ui.special },
+      TelescopeSelection = { link = "CursorLine" },
+      TelescopeSelectionCaret = { link = "CursorLineNr" },
+      TelescopeResultsClass = { link = "Structure" },
+      TelescopeResultsStruct = { link = "Structure" },
+      TelescopeResultsField = { link = "@field" },
+      TelescopeResultsMethod = { link = "Function" },
+      TelescopeResultsVariable = { link = "@variable" },
       TelescopePromptNormal = { bg = theme.ui.bg_p1 },
       TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
       TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
