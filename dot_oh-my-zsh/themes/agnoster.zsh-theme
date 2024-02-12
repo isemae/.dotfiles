@@ -75,11 +75,12 @@ prompt_segment() {
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    print -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
+%(?.%F{$CURRENT_BG}.%F{red}) >%f"
   else
-    echo -n "%{%k%}"
+    print -n "%{%k%}"
   fi
-  echo -n "%{%f%}"
+  print -n "%{%f%}"
   CURRENT_BG=''
 }
 
@@ -269,14 +270,4 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-prompt_newline() {
-  if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
-%{%k%F{blue}%}$SEGMENT_SEPARATOR"
-  else
-    echo -n "%{%k%}"
-  fi
 
-  echo -n "%{%f%}"
-  CURRENT_BG=''
-}
