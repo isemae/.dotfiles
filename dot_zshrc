@@ -101,6 +101,8 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+alias zd="open -a /Applications/Zed.app -n"
+alias xc="xed"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 prompt_context() {
@@ -144,6 +146,7 @@ function instant_prompt_arch() {
 alias vim="nvim"
 alias vi="nvim"
 
+
 # chezmoi
 alias czm="chezmoi"
 alias cz="chezmoi"
@@ -161,11 +164,22 @@ alias fk="thefuck"
 # yt-dlp
 alias dlp="yt-dlp"
 
+
 #python
 alias python="python3"
 alias py="python3"
-# Fig post block. Keep at the bottom of this file.
-
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# Flutter env 
+# export PATH="/opt/homebrew/Caskroom/flutter/3.16.9/flutter/bin:$PATH"
+export PATH="/opt/flutter/bin:$PATH"
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 eval $(thefuck --alias)
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

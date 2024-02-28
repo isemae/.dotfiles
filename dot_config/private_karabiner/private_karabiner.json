@@ -13,7 +13,7 @@
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 170,
                     "basic.to_if_alone_timeout_milliseconds": 120,
-                    "basic.to_if_held_down_threshold_milliseconds": 120,
+                    "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
@@ -3248,34 +3248,32 @@
                         "description": "R_CMD를 한영전환으로 (조합키 기능 추가)",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "right_command"
+                              "parameters": {
+                                "basic.to_if_held_down_threshold_milliseconds": 150
+                              },
+                              "from": {
+                                "key_code": "right_command"
+                              },
+                              "to": [
+                                {
+                                  "key_code": "spacebar",
+                                  "modifiers": ["left_control"],
+                                  "repeat": true
+                                }
+                              ],
+
+                              "to_if_held_down": [
+                                {
+                                  "key_code": "spacebar",
+                                  "modifiers": ["left_control"]
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_control"
-                                        ],
-                                        "repeat": true
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "right_command",
-                                        "lazy": true,
-                                        "modifiers": [
-                                            "any"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
+                                {
+                                  "key_code": "right_command",
+                                  "lazy": true,
+                                  "modifiers": ["any"]
+                                }
+                              ],
+                              "type": "basic"
                             },
                             {
                                 "from": {
@@ -3308,7 +3306,7 @@
                         ]
                     },
                     {
-                        "description": "right control키를 command키로 사용",
+                        "description": "right control키를 option키로 사용",
                         "manipulators": [
                             {
                                 "from": {
@@ -3321,7 +3319,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "right_alt"
                                     }
                                 ],
                                 "type": "basic"
