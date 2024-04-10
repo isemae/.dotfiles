@@ -10,7 +10,7 @@ return {
     },
   },
   opts = {
-    timeout = 3000,
+    timeout = 2000,
     render = "wrapped-compact",
     background_colour = "NotifyBackground",
     stages = "fade",

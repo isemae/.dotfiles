@@ -2,17 +2,40 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+
 # term settings
-if test (arch) = arm64
-    set -x PATH /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-else
-    set -x PATH /usr/local/bin:/usr/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+function dedup_path
+    set -gx PATH (string split ':' $PATH | sort -u | string join ':')
 end
 
-# bind -M insert ç fzf-cd-widget
+if test (arch) = arm64
+    set arm64_paths \
+        /opt/homebrew/bin \
+        /opt/homebrew/sbin \
+        /usr/local/bin \
+        /usr/local/sbin \
+        /Users/ji/.cargo/bin \
+        /Users/ji/bin
 
-set -gx PATH $HOME/.cargo/bin:$PATH
-set -gx PATH /Users/ji/bin:$PATH
+    for p in $arm64_paths
+        if not contains $p $PATH
+            set -x PATH $p $PATH
+        end
+    end
+
+else
+    set x86_paths /usr/local/bin /usr/local/sbin
+
+    for p in $x86_paths
+        if not contains $p $PATH
+            set -x PATH $p $PATH
+        end
+    end
+end
+
+source ~/.config/fish/functions/_pure_prompt_new_line.fish
+
+
 set -U fish_greeting
 
 set -q glyph_status_jobs; or set -g glyph_status_jobs "#"
@@ -23,9 +46,10 @@ set -U pure_show_system_time false
 set -U pure_reverse_prompt_symbol_in_vimode true
 
 # fzf 
+# bind -M insert ç fzf-cd-widget
 fzf --fish | source
 set -x FZF_DEFAULT_OPTS "--height 60% --layout=reverse --border"
-set -gx FZF_DEFAULT_COMMAND "fd . $HOME"
+set -gx FZF_DEFAULT_COMMAND "fd . "
 set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
 
 
@@ -55,7 +79,8 @@ alias fk="thefuck"
 # yt-dlp
 alias dlp="yt-dlp"
 
-
 #python
 alias python="python3"
 alias py="python3"
+
+# dedup_path

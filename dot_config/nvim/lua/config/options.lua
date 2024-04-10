@@ -112,5 +112,4 @@ else
   vim.opt.foldmethod = "indent"
 end
 
--- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

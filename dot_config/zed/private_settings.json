@@ -9,15 +9,18 @@
 {
   "theme": "kanagawa-wave",
   "ui_font_family": "Pretendard JP Variable",
-  "buffer_font_family": "D2Coding Nerd",
+  "buffer_font_family": "D2CodingLigature Nerd Font Mono",
   "ui_font_features": {},
+  "buffer_font_features": {
+    "calt": false
+  },
   "buffer_line_height": {
     "custom": 1.45
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
@@ -47,6 +50,6 @@
   "terminal": {
     "blinking": "on",
     "line_height": "standard",
-    "font_family": "D2Coding Nerd"
+    "font_family": "D2CodingLigature Nerd Font Mono"
   }
 }
