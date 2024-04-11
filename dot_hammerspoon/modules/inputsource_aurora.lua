@@ -1,34 +1,45 @@
 local boxes = {}
 -- 자신이 사용하고 있는 English 인풋 소스 이름을 넣어준다
 local inputEnglish = "com.apple.keylayout.ABC"
+local inputKorean = "org.youknowone.inputmethod.Gureum.han2"
+local inputJapanese = "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese"
+
 local box_height = 24
 local box_height1 = 37
 local box_alpha = 0.3
 
 local laptopScreen = "Built-in Retina Display"
-local GREEN = hs.drawing.color.osx_green
 
 local displayWatcher = hs.screen.watcher.new(function()
 	disable_show()
 	enable_show()
 end)
 
+---- check input source
+-- hs.hotkey.bind({ "cmd" }, "i", function()
+-- 	local input_source = hs.keycodes.currentSourceID()
+-- 	print(input_source)
+-- end)
+
 -- watcher 시작
 displayWatcher:start()
 
 -- 입력소스 변경 이벤트에 이벤트 리스너를 달아준다
 hs.keycodes.inputSourceChanged(function()
+	--상단 color
+	upper_color = {}
+	if hs.keycodes.currentSourceID() == inputKorean then
+		upper_color.hex = "#ffffff"
+		upper_color.alpha = 1
+	else
+		upper_color.hex = "#cc4477"
+		upper_color.alpha = 1
+	end
 	disable_show()
 	if hs.keycodes.currentSourceID() ~= inputEnglish then
 		enable_show()
 	end
 end)
-
---상단 color
-upper_color = {
-	hex = "#ffffff",
-	alpha = 1,
-}
 
 --하단color
 under_color = {
