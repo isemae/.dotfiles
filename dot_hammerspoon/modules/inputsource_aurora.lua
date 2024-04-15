@@ -1,9 +1,11 @@
 local boxes = {}
 -- 자신이 사용하고 있는 English 인풋 소스 이름을 넣어준다
-local inputEnglish = "com.apple.keylayout.ABC"
-local inputKorean = "org.youknowone.inputmethod.Gureum.han2"
-local inputJapanese = "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese"
 
+local inputSource = {
+	english = "com.apple.keylayout.ABC",
+	korean = "org.youknowone.inputmethod.Gureum.han2",
+	japanese = "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese",
+}
 local box_height = 24
 local box_height1 = 37
 local box_alpha = 0.3
@@ -28,16 +30,18 @@ displayWatcher:start()
 hs.keycodes.inputSourceChanged(function()
 	--상단 color
 	upper_color = {}
-	if hs.keycodes.currentSourceID() == inputKorean then
+	if hs.keycodes.currentSourceID() == inputSource.korean then
 		upper_color.hex = "#ffffff"
 		upper_color.alpha = 1
 	else
 		upper_color.hex = "#cc4477"
 		upper_color.alpha = 1
 	end
+
+	IM_alert()
 	disable_show()
-	if hs.keycodes.currentSourceID() ~= inputEnglish then
-		enable_show()
+	if hs.keycodes.currentSourceID() ~= inputSource.english then
+		-- enable_show()
 	end
 end)
 
@@ -88,4 +92,33 @@ function draw_rectangle(target_draw, x, y, width, height, fill_color)
 	target_draw:setStroke(false)
 	target_draw:setBehavior(hs.drawing.windowBehaviors.canJoinAllSpaces)
 	target_draw:show()
+end
+
+-- input alert
+local customStyle = hs.alert.defaultStyle
+customStyle.fillColor = { white = 0, alpha = 0.25 }
+customStyle.strokeColor = { alpha = 0 }
+customStyle.textColor = { white = 1.0, alpha = 1.0 }
+customStyle.textSize = 80
+customStyle.fadeOutDuration = 0.25
+
+function IM_alert()
+	local current = hs.keycodes.currentSourceID()
+	local language = nil
+
+	if current == inputSource.korean then
+		language = " 가 "
+	elseif current == inputSource.english then
+		language = " A "
+	elseif current == inputSource.japanese then
+		language = " あ "
+	end
+
+	if hs.keycodes.currentSourceID() == last_alerted_IM_ID then
+		return
+	end
+
+	hs.alert.closeSpecific(last_IM_alert_uuid)
+	last_IM_alert_uuid = hs.alert.show(language, customStyle, 0.2)
+	last_alerted_IM_ID = hs.keycodes.currentSourceID()
 end

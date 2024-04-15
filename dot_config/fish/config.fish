@@ -34,10 +34,10 @@ else
 end
 
 source ~/.config/fish/functions/_pure_prompt_new_line.fish
+set -gx TERM xterm-256color
 
 
 set -U fish_greeting
-
 set -q glyph_status_jobs; or set -g glyph_status_jobs "#"
 set -g __fish_git_prompt_showdirtystate yes
 set -g __fish_git_prompt_char_dirtystate '±'
@@ -62,6 +62,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias svi="sudo nvim"
 
+# lazygit
+alias lzgit="lazygit"
+
 # chezmoi
 alias czm="chezmoi"
 alias cz="chezmoi"
@@ -72,10 +75,11 @@ alias yz="yazi"
 # alias ls='ls --color=auto'
 alias la="lsd -a"
 alias lf="lsd -Fla"
-alias ls="lsd"
+# alias ls="lsd"
 
 # thefuck
 alias fk="thefuck"
+
 # yt-dlp
 alias dlp="yt-dlp"
 
@@ -83,4 +87,11 @@ alias dlp="yt-dlp"
 alias python="python3"
 alias py="python3"
 
-# dedup_path
+# bat
+alias cat="bat"
+
+# most
+alias man="most"
+
+# ranger 
+alias ran="ranger"
