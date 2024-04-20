@@ -95,3 +95,13 @@ alias man="most"
 
 # ranger 
 alias ran="ranger"
+
+bind \e\[1\;9D beginning-of-line # command+left 
+bind \e\[1\;9C end-of-line # command+right
+
+bind \e\x7F backward-kill-word
+bind \e\[3\;3~ kill-word
+bind \ed kill-word
+
+# bind \e\[1\;3D backward-word # option+left
+# bind \e\[1\;9C forward-word # option+right

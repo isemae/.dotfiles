@@ -13,7 +13,7 @@
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 170,
                     "basic.to_if_alone_timeout_milliseconds": 120,
-                    "basic.to_if_held_down_threshold_milliseconds": 120,
+                    "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
@@ -135,182 +135,8 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },     {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "caps_tab_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "caps_function_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                   "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },     {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "caps_tab_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "caps_function_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                   "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },     {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "caps_tab_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "caps_function_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                   "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "caps_tab_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "caps_function_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                   "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "left_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": "left_shift"
-                                    },
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": "left_shift"
-                                    },
-                                    {
-                                        "key_code": "left_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-    {
                                 "conditions": [
                                     {
                                         "name": "caps_arrow_mode",
@@ -354,51 +180,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }, {
-                                "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "left_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": "left_shift"
-                                    },
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": "left_shift"
-                                    },
-                                    {
-                                        "key_code": "left_arrow",
-                                        "repeat": false
-                                    }
-                                ],
-                                "type": "basic"
-                            }, 
+                            },
                             {
                                 "conditions": [
                                     {
@@ -843,6 +625,40 @@
                                         "value": 1
                                     },
                                     {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
                                         "name": "caps_function_mode",
                                         "type": "variable_if",
                                         "value": 0
@@ -880,12 +696,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "m"
                                 },
                                 "to": [
                                     {
@@ -942,16 +753,43 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "p"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "equal_sign"
+                                        "key_code": "equal_sign",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -978,6 +816,34 @@
                                         "modifiers": [
                                             "shift"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -1054,7 +920,128 @@
                                 ],
                                 "type": "basic"
                             },
-                           
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -1123,32 +1110,29 @@
                                 ],
                                 "type": "basic"
                             },
-                             {
+                            {
                                 "conditions": [
-                                    {
-                                        "name": "caps_arrow_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
                                     {
                                         "name": "caps_tab_mode",
                                         "type": "variable_if",
-                                        "value": 0
-                                    },
-                                     {
-                                        "name": "caps_function_mode",
-                                        "type": "variable_if",
-                                        "value": 0
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "p"
+                                    "key_code": "e"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "equal_sign",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
-                                            "left_shift"
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command",
+                                            "fn"
                                         ]
                                     }
                                 ],
@@ -1216,7 +1200,37 @@
                                 ],
                                 "type": "basic"
                             },
-                          
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -1272,7 +1286,77 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1303,6 +1387,12 @@
                                         "name": "caps_function_mode",
                                         "type": "variable_if",
                                         "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -1315,8 +1405,363 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
                                         "key_code": "down_arrow",
                                         "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "u",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_arrow_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1798,6 +2243,158 @@
                                         "name": "caps_tab_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "u",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_function_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
@@ -1846,8 +2443,71 @@
                                 ],
                                 "type": "basic"
                             },
-                           
-                       
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command",
+                                            "fn"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
@@ -2482,19 +3142,16 @@
                                     }
                                 ],
                                 "to_if_held_down": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "right_command",
-                                        "lazy": true,
-                                        "modifiers": [
-                                            "any"
-                                        ]
-                                    }
+                                  {
+                                    "key_code": "spacebar",
+                                    "modifiers": ["left_control"]
+                                  },
+                                 
+                                  {
+                                    "key_code": "right_command",
+                                    "lazy": true,
+                                    "modifiers": ["any"]
+                                  }
                                 ],
                                 "type": "basic"
                             },
@@ -2633,6 +3290,161 @@
                                         "key_code": "3",
                                         "modifiers": [
                                             "left_shift",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+S/Z/X/C/V/F를 커맨드+S/Z/X/C/V/F로 사용",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.parallels.desktop",
+                                            "com.parallels.vm",
+                                            "com.parallels.desktop.console",
+                                            "com.parallels.winapp."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.parallels.desktop",
+                                            "com.parallels.vm",
+                                            "com.parallels.desktop.console",
+                                            "com.parallels.winapp."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.parallels.desktop",
+                                            "com.parallels.vm",
+                                            "com.parallels.desktop.console",
+                                            "com.parallels.winapp."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.parallels.desktop",
+                                            "com.parallels.vm",
+                                            "com.parallels.desktop.console",
+                                            "com.parallels.winapp."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.parallels.desktop",
+                                            "com.parallels.vm",
+                                            "com.parallels.desktop.console",
+                                            "com.parallels.winapp."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
                                             "left_command"
                                         ]
                                     }
@@ -3215,36 +4027,6 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "backslash"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "delete_or_backspace"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "delete_or_backspace"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "backslash"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
                                 "key_code": "escape"
                             },
                             "to": [
@@ -3265,11 +4047,21 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_control"
+                                "key_code": "backslash"
                             },
                             "to": [
                                 {
-                                    "key_code": "caps_lock"
+                                    "key_code": "delete_or_backspace"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_or_backspace"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "backslash"
                                 }
                             ]
                         }
@@ -3342,31 +4134,11 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
                                 "key_code": "left_command"
                             },
                             "to": [
                                 {
                                     "key_code": "left_option"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_control"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "caps_lock"
                                 }
                             ]
                         },
@@ -3435,72 +4207,6 @@
                         "is_pointing_device": true,
                         "product_id": 49280,
                         "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 613,
-                        "vendor_id": 76
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 62858,
-                        "vendor_id": 13652
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 62858,
-                        "vendor_id": 13652
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,

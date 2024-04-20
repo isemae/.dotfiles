@@ -1,6 +1,6 @@
+-- disabled plugins
 return {
-  {
-    "echasnovski/mini.pairs",
-    enabled = "true",
-  },
+  -- { "", enabled = false },
+  { "echasnovski/mini.pairs", enabled = false },
+  { "tpope/rsi-vim", enabled = false },
 }

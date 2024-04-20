@@ -28,7 +28,7 @@ start-at-login = false
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+    # '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -93,6 +93,9 @@ run = ['layout floating']
 if.app-id = 'com.apple.finder'
 run = ['layout floating']  
 
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = ['layout floating']  
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -122,7 +125,7 @@ cmd-h = []
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
-alt-f = 'fullscreen'
+alt-shift-f = 'fullscreen'
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -137,10 +140,16 @@ alt-shift-l = 'move right'
 
 # 'join' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-cmd-alt-shift-h = 'join-with left'
-cmd-alt-shift-j = 'join-with down'
-cmd-alt-shift-k = 'join-with up'
-cmd-alt-shift-l = 'join-with right'
+cmd-ctrl-shift-h = 'join-with left'
+cmd-ctrl-shift-j = 'join-with down'
+cmd-ctrl-shift-k = 'join-with up'
+cmd-ctrl-shift-l = 'join-with right'
+
+alt-shift-u = 'join-with up'
+alt-shift-d = 'join-with down'
+alt-shift-p = 'join-with left'
+alt-shift-n = 'join-with right'
+
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
@@ -173,8 +182,8 @@ alt-shift-5 = 'move-node-to-workspace 5'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-ctrl-alt-x = ['move-node-to-monitor next --wrap-around' , 'focus-monitor next --wrap-around']
-ctrl-alt-z = ['move-node-to-monitor prev --wrap-around','focus-monitor prev --wrap-around']
+ctrl-cmd-rightSquareBracket = ['move-node-to-monitor next --wrap-around' , 'focus-monitor next --wrap-around']
+ctrl-cmd-leftSquareBracket = ['move-node-to-monitor prev --wrap-around','focus-monitor prev --wrap-around']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
