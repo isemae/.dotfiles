@@ -6,6 +6,7 @@
 [core]
 	excludesfile = /Users/ji/.gitignore_global
   pager = delta
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
