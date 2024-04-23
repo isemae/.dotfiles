@@ -1,0 +1,39 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-d": "editor::Delete",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "ctrl-s": "editor::SelectLargerSyntaxNode",
+      "ctrl-shift-s": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && (vim_operator == none || vim_operator == n) && !VimWaiting",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space w": "project_panel::ToggleFocus",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "] d": "editor::GoToDiagnostic",
+      "g a": "editor::FindAllReferences",
+      "space s j": "pane::SplitDown",
+      "space s h": "pane::SplitLeft",
+      "space s l": "pane::SplitRight",
+      "space s k": "pane::SplitUp",
+      "space q a": "pane::CloseAllItems",
+      "space w d": ["workspace::ActivatePaneInDirection", "Down"],
+      "space w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "space w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "space w j": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space w": "project_panel::ToggleFocus"
+    }
+  }
+]
