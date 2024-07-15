@@ -34,7 +34,6 @@ else
 end
 
 source ~/.config/fish/functions/_pure_prompt_new_line.fish
-set -gx TERM xterm-256color
 
 
 set -U fish_greeting
@@ -48,33 +47,32 @@ set -U pure_reverse_prompt_symbol_in_vimode true
 # fzf 
 # bind -M insert ç fzf-cd-widget
 fzf --fish | source
-set -x FZF_DEFAULT_OPTS "--height 60% --layout=reverse --border"
-set -gx FZF_DEFAULT_COMMAND "fd . "
-set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
+set -x FZF_DEFAULT_OPTS " \
+  --height 60% --layout=reverse --border \
+  --ansi \
+"
+# set -gx FZF_DEFAULT_COMMAND "fd . "
+# set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
 
-
+alias python="python3"
+# editors
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias zd="open -a /Applications/Zed.app -n"
 alias xc="xed"
+alias csr="cursor"
 
 # nvim
 alias vim="nvim"
 alias vi="nvim"
-alias svi="sudo nvim"
-
-# lazygit
-alias lzgit="lazygit"
 
 # chezmoi
 alias czm="chezmoi"
 alias cz="chezmoi"
 
-# yazi
-alias yz="yazi"
-
 # alias ls='ls --color=auto'
 alias la="lsd -a"
-alias lf="lsd -Fla"
+alias lt="lsd --tree"
+alias lf="lsd -Fla --date relative"
 # alias ls="lsd"
 
 # thefuck
@@ -83,18 +81,18 @@ alias fk="thefuck"
 # yt-dlp
 alias dlp="yt-dlp"
 
-#python
+# python
 alias python="python3"
 alias py="python3"
 
-# bat
+# cli bins
 alias cat="bat"
-
-# most
-alias man="most"
-
-# ranger 
+alias man="tldr"
+alias du="dust"
+alias brt="broot"
 alias ran="ranger"
+alias yz="yazi"
+
 
 bind \e\[1\;9D beginning-of-line # command+left 
 bind \e\[1\;9C end-of-line # command+right
@@ -105,3 +103,6 @@ bind \ed kill-word
 
 # bind \e\[1\;3D backward-word # option+left
 # bind \e\[1\;9C forward-word # option+right
+
+# zoxide init --cmd cd fish | source
+zoxide init fish | source

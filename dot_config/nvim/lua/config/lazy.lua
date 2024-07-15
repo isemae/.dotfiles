@@ -10,16 +10,14 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
-    { import = "lazyvim.plugins.extras.vscode" },
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.rust" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.go" },
     --
+    --
+    --
+    -- import any extras modules here
     -- import/override with your plugins
+    --
+    --
+    --
     { import = "plugins" },
   },
   defaults = {
@@ -49,3 +47,10 @@ require("lazy").setup({
     },
   },
 })
+local hl_groups = vim.api.nvim_get_hl(0, {})
+
+for key, hl_group in pairs(hl_groups) do
+  if hl_group.italic then
+    vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, { italic = false }))
+  end
+end

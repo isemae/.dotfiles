@@ -13,10 +13,10 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    # JankyBorders has a built-in detection of already running process,
-# sketchbar has a built-in detection of already running process,
-    # so it won't be run twice on AeroSpace restart
-    'exec-and-forget /usr/local/bin/borders width=5.0' ,
+  # JankyBorders has a built-in detection of already running process,
+  # sketchbar has a built-in detection of already running process,
+  # so it won't be run twice on AeroSpace restart
+  'exec-and-forget /usr/local/bin/borders width=5.0',
 
   # Run Sketchybar together with AeroSpace
   # 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar'
@@ -27,8 +27,10 @@ start-at-login = false
 
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    # '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  # '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -51,7 +53,6 @@ default-root-container-orientation = 'auto'
 # Visual indent makes it easier to understand that containers of the same orientation are nested.
 # If you have 'enable-normalization-opposite-orientation-for-nested-containers' enabled then
 # there is no way to observe the indent
-indent-for-nested-containers-with-the-same-orientation = 30
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -65,12 +66,12 @@ key-mapping.preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 15
-inner.vertical =   15
-outer.left =       20
-outer.bottom =     20
-outer.top =        15
-outer.right =      20
+inner.horizontal = 12
+inner.vertical = 10
+outer.left = 12
+outer.right = 12
+outer.top = 10
+outer.bottom = 12
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec]
@@ -79,23 +80,31 @@ inherit-env-vars = true
 PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
 [[on-window-detected]]
-if.app-id = 'imagetasks.Pixea'              # Application ID exact match
-run = ['layout floating']  
+if.app-id = 'imagetasks.Pixea' # Application ID exact match
+run = ['layout floating']
 [[on-window-detected]]
-if.app-id = 'com.colliderli.iina'     
-run = ['layout floating']  
+if.app-id = 'com.colliderli.iina'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
-run = ['layout floating']  
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = ['layout floating']  
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
-run = ['layout floating']  
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.drycactus.polybridge'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+run = ['layout floating']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -125,7 +134,7 @@ cmd-h = []
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
-alt-shift-f = 'fullscreen'
+ctrl-alt-f = 'fullscreen'
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -133,10 +142,10 @@ alt-k = 'focus up'
 alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+ctrl-alt-h = 'move left'
+ctrl-alt-j = 'move down'
+ctrl-alt-k = 'move up'
+ctrl-alt-l = 'move right'
 
 # 'join' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -145,15 +154,15 @@ cmd-ctrl-shift-j = 'join-with down'
 cmd-ctrl-shift-k = 'join-with up'
 cmd-ctrl-shift-l = 'join-with right'
 
-alt-shift-u = 'join-with up'
-alt-shift-d = 'join-with down'
-alt-shift-p = 'join-with left'
-alt-shift-n = 'join-with right'
+ctrl-alt-u = 'join-with up'
+ctrl-alt-d = 'join-with down'
+ctrl-alt-p = 'join-with left'
+ctrl-alt-n = 'join-with right'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+ctrl-alt-minus = 'resize smart -50'
+ctrl-alt-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -168,33 +177,40 @@ alt-5 = 'workspace 5'
 # alt-0 = 'workspace 0'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-# alt-shift-6 = 'move-node-to-workspace 6'
-# alt-shift-7 = 'move-node-to-workspace 7'
-# alt-shift-8 = 'move-node-to-workspace 8'
-# alt-shift-9 = 'move-node-to-workspace 9'
-# alt-shift-0 = 'move-node-to-workspace 10'
+ctrl-alt-1 = 'move-node-to-workspace 1'
+ctrl-alt-2 = 'move-node-to-workspace 2'
+ctrl-alt-3 = 'move-node-to-workspace 3'
+ctrl-alt-4 = 'move-node-to-workspace 4'
+ctrl-alt-5 = 'move-node-to-workspace 5'
+# ctrl-alt-6 = 'move-node-to-workspace 6'
+# ctrl-alt-7 = 'move-node-to-workspace 7'
+# ctrl-alt-8 = 'move-node-to-workspace 8'
+# ctrl-alt-9 = 'move-node-to-workspace 9'
+# ctrl-alt-0 = 'move-node-to-workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-ctrl-cmd-rightSquareBracket = ['move-node-to-monitor next --wrap-around' , 'focus-monitor next --wrap-around']
-ctrl-cmd-leftSquareBracket = ['move-node-to-monitor prev --wrap-around','focus-monitor prev --wrap-around']
+ctrl-alt-x = [
+  'move-node-to-monitor next --wrap-around',
+  'focus-monitor next --wrap-around',
+]
+ctrl-alt-z = [
+  'move-node-to-monitor prev --wrap-around',
+  'focus-monitor prev --wrap-around',
+]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+ctrl-alt-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 # backspace = ['close-all-windows-but-current', 'mode main']
 esc = ['reload-config', 'mode main']
-
-

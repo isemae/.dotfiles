@@ -212,7 +212,6 @@ return {
 {
   "loctvl842/monokai-pro.nvim",
   opts = {
-
     transparent_background = true,
     terminal_colors = true,
     devicons = true, -- highlight the icons of `nvim-web-devicons`
