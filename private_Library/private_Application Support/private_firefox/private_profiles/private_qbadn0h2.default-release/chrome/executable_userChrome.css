@@ -1,0 +1,227 @@
+/**
+ * Decrease size of the sidebar header
+ */
+
+@import url(hacks/minimal_text_fields.css);
+@import url(hacks/button_effect_scale_onclick.css);
+@import url(hacks/sidebery.css);
+:root {
+  color-scheme: light dark !important;
+  --autohide-sidebar-extended: 320px; /* width of tab panel shown */
+  --autohide-sidebar-collapsed: 29px; /* width of tab panel hidden */
+  --sidebar-height: 100%;
+  --toolbarbutton-inner-padding: 10px;
+}
+#navigator-toolbox {
+  border: none !important;
+}
+#appcontent
+  > #tabbrowser-tabbox
+  > #tabbrowser-tabpanels
+  > .deck-selected
+  > .browserContainer
+  > .browserStack
+  > browser {
+  border-radius: 8px !important;
+  margin: 8px !important;
+  margin-top: 0px !important;
+  margin-right: 4px !important;
+}
+#appcontent
+  > #tabbrowser-tabbox
+  > #tabbrowser-tabpanels
+  > .deck-selected
+  > .browserContainer
+  > .browserStack {
+  background-color: var(--toolbar-bgcolor) !important;
+}
+/* -------------------------- Sidebery Auto-hiding Sidebar ------------------------ */
+/* width of panel (grey box) (different from width of each tab) */
+#main-window:not([extradragspace="true"])
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+    [hidden]
+  ) {
+  position: absolute;
+  right: 0px;
+  width: var(--autohide-sidebar-collapsed) !important;
+  min-width: unset !important;
+  z-index: 1;
+
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+/* width of panel (grey box):hover */
+#main-window[titlepreface*=" "] #navigator-toolbox {
+  display: flex !important;
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+#main-window[titlepreface*=" "] #nav-bar {
+  flex-grow: 1 !important;
+}
+
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden]):hover,
+/* width of panel header - use if your header is shown */
+/* #main-window:not([extradragspace="true"]) 
+    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header, */
+/* width of each tab */
+#main-window:not([extradragspace="true"]) 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar {
+  width: var(--autohide-sidebar-extended) !important;
+}
+
+/* normal website page right margin */
+#main-window:not([extradragspace="true"])
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+    [hidden]
+  )
+  ~ #appcontent {
+  margin-right: var(--autohide-sidebar-collapsed);
+}
+/* when youtube full screen */
+#main-window:not([extradragspace="true"])[inFullscreen][inDOMFullscreen]
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+    [hidden]
+  )
+  ~ #appcontent {
+  margin-right: 0 !important;
+}
+
+/* adjust if your sidebery is not tall enough */
+#main-window:not([extradragspace="true"])[inFullscreen]
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"],
+#main-window:not([extradragspace="true"])
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+  height: var(--sidebar-height);
+}
+/*overflow-x: hidden !important;*/
+/**/
+/*min-width: var(--sidebar-hover-width) !important;*/
+/*max-width: var(--sidebar-hover-width) !important;*/
+/**/
+/*opacity: 1 !important;*/
+/*transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);*/
+/**/
+/*> #sidebar-header {*/
+/*  display: none;*/
+/*}*/
+
+/*#sidebar-box:hover {*/
+/*  /*min-width: var(--sidebar-visible-width) !important;*/
+
+/*  max-width: var(--sidebar-visible-width) !important;*/
+/*  opacity: 1 !important;*/
+/*  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);*/
+/*}*/
+/**/
+/*#sidebar {*/
+/*  opacity: 1 !important;*/
+/**/
+/*  transition: all 150ms cubic-bezier(0.075, 0.82, 0.165, 1);*/
+/*}*/
+/**/
+/*#sidebar:hover {*/
+/*  opacity: 1 !important;*/
+/**/
+/*  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);*/
+/*}*/
+
+#nav-bar {
+  order: 0 !important;
+  border-top-width: 0px !important;
+}
+#nav-bar toolbarspring {
+  min-width: 10px !important;
+  max-width: 20px !important;
+}
+
+#nav-bar-customization-target:not([inFullscreen]) > #back-button,
+#nav-bar-customization-target:not([inFullscreen]) > #forward-button,
+#nav-bar-customization-target:not([inFullscreen]) > #stop-reload-button {
+  transform: translateX(70px) !important;
+}
+/**/
+/*#nav-bar-customization-target[inFullscreen] > #back-button,*/
+/*#nav-bar-customization-target[inFullscreen] > #forward-button,*/
+/*#nav-bar-customization-target[inFullscreen] > #stop-reload-button {*/
+/*  transform: translateX(0px) !important;*/
+/*}*/
+
+#urlbar-container {
+  margin-left: 0px !important;
+}
+#urlbar-background {
+  --toolbar-field-border-color: transparent;
+  --toolbar-field-background-color: transparent;
+  --toolbar-field-focus-border-color: transparent;
+  /*--toolbar-field-focus-background-color: var(--tabbar-background-color);*/
+  /*--arrowpanel-border-color: #a86595;*/
+}
+
+#titlebar {
+  order: 2 !important;
+  position: relative;
+  z-index: 1;
+}
+
+#urlbar-container:not([inFullscreen]) {
+  margin-left: 70px !important;
+  margin-right: 0px !important;
+}
+
+#urlbar-container[inFullscreen] {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+#titlebar:not([style*="overflow:hidden"]) .titlebar-buttonbox-container {
+  display: block !important;
+  position: fixed !important;
+  top: 9px !important;
+  margin-right: 0px !important;
+}
+
+#titlebar[style*="overflow: hidden"] .titlebar-buttonbox-container {
+  display: block !important;
+  position: fixed !important;
+  left: -1px !important;
+  margin-left: 21px !important;
+}
+
+/*Dynamic native tabs*/
+#main-window #titlebar {
+  overflow: hidden;
+  transition: height 0.1s 0.1s !important;
+}
+
+/* Default state: Set initial height to enable animation */
+#main-window #titlebar {
+  height: 3em !important;
+}
+#main-window[uidensity="touch"] #titlebar {
+  height: 3.35em !important;
+}
+#main-window[uidensity="compact"] #titlebar {
+  height: 3.35em !important;
+}
+/* Hidden state: Hide native tabs strip */
+#main-window[titlepreface*=" "] #titlebar {
+  height: 0 !important;
+}
+:root,
+panel,
+dialog,
+window {
+  --lwt-toolbarbutton-icon-fill-attention: #fbfbfb !important;
+  --button-primary-bgcolor: #fbfbfb !important;
+  --button-primary-hover-bgcolor: #fbfbfb !important;
+  --button-primary-active-bgcolor: #fbfbfb !important;
+  --in-content-primary-button-background: #fbfbfb !important;
+  --in-content-primary-button-background-hover: #fbfbfb !important;
+  --in-content-primary-button-background-active: #fbfbfb !important;
+  --input-border-color: #fbfbfb !important;
+  --uc-checkbox-checked-bgcolor: #fbfbfb !important;
+  --checkbox-checked-bgcolor: #fbfbfb !important;
+  --focus-outline-color: #fbfbfb !important;
+  --in-content-link-color: #fbfbfb !important;
+}
