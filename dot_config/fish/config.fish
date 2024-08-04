@@ -51,8 +51,9 @@ set -x FZF_DEFAULT_OPTS " \
   --height 60% --layout=reverse --border \
   --ansi \
 "
-# set -gx FZF_DEFAULT_COMMAND "fd . "
-# set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
+set -gx FZF_DEFAULT_COMMAND "fd . "
+set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
+
 
 alias python="python3"
 # editors
@@ -93,7 +94,8 @@ alias brt="broot"
 alias ran="ranger"
 alias yz="yazi"
 
-
+# Bindings
+bind \cd delete-char
 bind \e\[1\;9D beginning-of-line # command+left 
 bind \e\[1\;9C end-of-line # command+right
 
