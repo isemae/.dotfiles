@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 # term settings
 function dedup_path
     set -gx PATH (string split ':' $PATH | sort -u | string join ':')
@@ -16,7 +15,6 @@ if test (arch) = arm64
         /usr/local/sbin \
         /Users/ji/.cargo/bin \
         /Users/ji/bin
-
     for p in $arm64_paths
         if not contains $p $PATH
             set -x PATH $p $PATH
@@ -25,7 +23,6 @@ if test (arch) = arm64
 
 else
     set x86_paths /usr/local/bin /usr/local/sbin
-
     for p in $x86_paths
         if not contains $p $PATH
             set -x PATH $p $PATH
@@ -35,7 +32,7 @@ end
 
 source ~/.config/fish/functions/_pure_prompt_new_line.fish
 
-
+alias fns="functions"
 set -U fish_greeting
 set -q glyph_status_jobs; or set -g glyph_status_jobs "#"
 set -g __fish_git_prompt_showdirtystate yes
@@ -55,29 +52,29 @@ set -gx FZF_DEFAULT_COMMAND "fd . "
 set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
 
 
-alias python="python3"
-# editors
+# Applications alias
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias zd="open -a /Applications/Zed.app -n"
+alias sts="open -a /Applications/SpringToolSuite4.app/"
 alias xc="xed"
-alias csr="cursor"
 
 # nvim
 alias vim="nvim"
 alias vi="nvim"
+alias 퍄="nvim"
+alias nv="neovide"
 
 # chezmoi
 alias czm="chezmoi"
 alias cz="chezmoi"
 
 # alias ls='ls --color=auto'
-alias la="lsd -a"
-alias lt="lsd --tree"
-alias lf="lsd -Fla --date relative"
-# alias ls="lsd"
 
-# thefuck
-alias fk="thefuck"
+alias ls="lsd"
+alias lsa="ls -a"
+alias lst="ls --tree"
+alias lla="ls -la"
+alias lsf="ls -Fla --date relative"
 
 # yt-dlp
 alias dlp="yt-dlp"
@@ -90,9 +87,6 @@ alias py="python3"
 alias cat="bat"
 alias man="tldr"
 alias du="dust"
-alias brt="broot"
-alias ran="ranger"
-alias yz="yazi"
 
 # Bindings
 bind \cd delete-char
@@ -102,9 +96,6 @@ bind \e\[1\;9C end-of-line # command+right
 bind \e\x7F backward-kill-word
 bind \e\[3\;3~ kill-word
 bind \ed kill-word
-
-# bind \e\[1\;3D backward-word # option+left
-# bind \e\[1\;9C forward-word # option+right
 
 # zoxide init --cmd cd fish | source
 zoxide init fish | source

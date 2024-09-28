@@ -1,39 +1,45 @@
 local wezterm = require("wezterm")
-local features = require("features")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
 if wezterm.target_triple == "aarch64-apple-darwin" then
-	-- Configs for OSX only
-
 	-- font_dirs    = { '$HOME/.dotfiles/.fonts' }
 	config.font = wezterm.font_with_fallback({
+
+		-- for monospaced characters
 		{
-			family = "JetBrainsMonoNL Nerd Font Mono",
-			weight = "Medium",
-			-- 	-- family = "IosevkaTerm Nerd Font Mono",
-			-- 	weight = "Regular",
+			family = "Iosevka Custom",
+			-- 	family = "JetBrainsMonoNL Nerd Font Mono",
+			weight = "Regular",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 		},
-		{ family = "D2CodingLigature Nerd Font Mono", weight = "Medium" },
+
+		-- for symbols and monospaced korean characters
+		{
+			family = "Sarasa Mono K Nerd Font",
+			-- 	family = "D2CodingLigature Nerd Font Mono",
+			weight = "Regular",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+		},
 	})
 
 	config.font_size = 16
-	config.line_height = 1.1
+	-- config.line_height = 1.03
+
 	config.front_end = "WebGpu"
 
+	-- config.color_scheme = "Black Metal (base16)"
 	-- config.color_scheme = "terafox"
 	-- config.color_scheme = "Maia (Gogh)"
-	-- config.color_scheme = "Adventure"
-	-- config.color_scheme = "Catppuccin Mocha (Gogh)"
 	-- config.color_scheme = "Rosé Pine Moon (Gogh)"
 
 	config.colors = {
+		ansi = { "#393552", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
+		brights = { "#6e6a86", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
+
 		foreground = "#e0def4",
 		background = "#232136",
 		-- background = "#1f1f28",
-
-		ansi = { "#393552", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
-		brights = { "#6e6a86", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
 
 		selection_fg = "#e0def4",
 		selection_bg = "#44415a",
@@ -57,22 +63,26 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 				fg_color = "#aaa",
 			},
 			inactive_tab_edge = "none",
+			inactive_tab_hover = {
+				bg_color = "none",
+				fg_color = "#d5c7ac",
+			},
 		},
 	}
 
 	config.window_frame = {
-		font = wezterm.font({ family = "D2CodingLigature Nerd Font Mono Nerd", italic = false, weight = "Bold" }),
+		font = wezterm.font({ family = "Pretendard jp variable", italic = false, weight = "DemiBold" }),
 		font_size = 14.0,
 		active_titlebar_bg = "none",
 		inactive_titlebar_bg = "none",
 	}
 	config.window_padding = {
-		left = 8,
-		right = 0,
+		left = 10,
+		right = 10,
 		top = 60,
 		bottom = 2,
 	}
-	config.exit_behavior = "CloseOnCleanExit"
+	config.exit_behavior = "Close"
 	wezterm.action({ CloseCurrentTab = { confirm = false } })
 
 	-- config.window_background_gradient = {
@@ -88,10 +98,10 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	-- config.show_close_tab_button_in_tabs = false -- nightly only for now
 
 	config.window_close_confirmation = "NeverPrompt"
-	config.window_background_opacity = 0.93
+	config.window_background_opacity = 0.97
 	config.macos_window_background_blur = 60
 
-	config.cursor_blink_rate = 600
+	config.cursor_blink_rate = 0
 	config.default_cursor_style = "BlinkingBlock"
 	config.animation_fps = 1
 
@@ -115,13 +125,6 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 			}),
 		},
 		{
-			key = "k",
-			mods = "CMD|ALT",
-			action = wezterm.action_callback(function(window, pane)
-				features.theme_switcher(window, pane)
-			end),
-		},
-		{
 			key = ",",
 			mods = "CMD",
 			action = act.SpawnCommandInNewTab({
@@ -130,8 +133,9 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 					TERM = "screen-256color",
 				},
 				args = {
-					"/opt/homebrew/bin/nvim",
-					os.getenv("Users/ji/.wezterm.lua"),
+					os.getenv("SHELL"),
+					"-c",
+					"nvim " .. wezterm.shell_quote_arg(wezterm.config_file),
 				},
 			}),
 			-- other keys
@@ -149,7 +153,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	-- default_prog = { "wsl.exe", "~", "-d", "Ubuntu-20.04" }
 end
 
-if wezterm.target_triple == "x86_65-unknown-linux-gnu" then
+if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
 	-- Configs for Linux only
 	-- font_dirs    = { '$HOME/.dotfiles/.fonts' }
 end

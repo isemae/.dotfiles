@@ -10,8 +10,8 @@ configFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.config/hammerspoo
 configFileWatcher:start()
 
 -- require("modules.auto-reload")
-require("modules.inputsource_aurora")
+-- require("modules.inputsource_aurora")
 require("modules.wheelClickScroll")
-require("modules.esc_convert_to_eng")
+-- require("modules.esc_convert_to_eng")
 
 hs.notify.new({ title = "Hammerspoon", subTitle = "Configuration loaded" }):send()
