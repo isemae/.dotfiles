@@ -1,0 +1,197 @@
+{
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "editor.fontFamily": "Iosevka Custom Nerd",
+  "terminal.integrated.fontFamily": "D2CodingLigature Nerd Font Mono, MesloLGMDZ Nerd Font Mono",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.mouseWheelScrollSensitivity": 0.65,
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "rust-analyzer.rustfmt.enableRangeFormatting": true,
+  "[rust]": {
+  "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.external.osxExec": "wezterm.app",
+  "terminal.integrated.shellIntegration.enabled": false,
+  "window.commandCenter": true,
+  "workbench.iconTheme": "vscode-seedling-icon-theme-plus",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1"
+  },
+  "workbench.startupEditor": "none",
+  "editor.wordWrapColumn": 120,
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  },
+
+
+  "python.formatting.provider": ["black"],
+  "python.formatting.blackArgs": ["--line-length", "88"],
+  "json.schemas": [],
+  "liveshare.accessibility.soundsEnabled": false,
+  "liveshare.accessibility.soundVolume": 0,
+  "editor.parameterHints.enabled": false,
+  "editor.fontLigatures": false,
+  "editor.fontWeight": "400",
+  "editor.indentSize": "tabSize",
+  "[yaml]": {},
+  "[dockercompose]": {},
+  "editor.formatOnSaveMode": "modifications",
+  "eslint.format.enable": true,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontWeight": "400",
+  "errorLens.fontFamily": "d2coding nerd, d2codingligature nerd font mono",
+  "debug.console.fontFamily": "d2coding nerd, MesloLGMDZ Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "explorer.confirmDragAndDrop": false,
+  "editor.autoClosingQuotes": "never",
+  "vim.argumentObjectClosingDelimiters": ["}", ")"],
+  "vim.argumentObjectOpeningDelimiters": ["(", "{"],
+  "vim.enableNeovim": true,
+  "vim.foldfix": true,
+  "vim.targets.bracketObjects.enable": false,
+
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "Kanagawa",
+  "vim.easymotion": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.highlightGroups.highlights": {
+    "IncSearch": {
+      "backgroundColor": "theme.editor.findMatchBackground",
+      "borderColor": "theme.editor.findMatchBorder"
+    },
+    "Search": {
+      "backgroundColor": "theme.editor.findMatchHighlightBackground",
+      "borderColor": "theme.editor.findMatchHighlightBorder"
+    },
+    "Visual": {
+      "backgroundColor": "theme.editor.selectionBackground"
+    },
+    "normal": {
+      "backgroundColor": "theme.editor.selectionBackground"
+    }
+  },
+  "debug.console.fontSize": 16,
+  "chat.editor.fontSize": 1,
+  "scm.inputFontFamily": "d2coding nerd, MesloLGMDZ Nerd Font Mono",
+  "chat.editor.fontFamily": "d2coding nerd, MesloLGMDZ Nerd Font Mono",
+  "editor.codeLensFontFamily": "Iosevka Custom Nerd, d2codingligature nerd font mono, MesloLGMDZ Nerd Font Mono",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.minimap.enabled": false,
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineInserted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "bitoAI.appearance.fontSize (Match with IDE Font)": false,
+  "bitoAI.codeCompletion.enableAutoCompletion": true,
+  "bitoAI.codeCompletion.enableCommentToCode": true,
+  "code-runner.executorMap": {
+
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "zig": "zig run",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python3 -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runghc",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName",
+    "mojo": "mojo run",
+    "erlang": "escript",
+    "spwn": "spwn build",
+    "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
+    "gleam": "gleam run -m $fileNameWithoutExt"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "editor.inlineSuggest.showToolbar": "always",
+  "accessibility.signalOptions.volume": 40,
+  "console-ninja.featureSet": "Community",
+  "lldb.suppressUpdateNotifications": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "solid",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}

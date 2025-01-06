@@ -1,87 +1,122 @@
 # keymap.toml
-[[manager.prepend_keymap]]
-on = ["l"]
-run = "plugin --sync smart-enter"
-desc = "Enter the child directory, or open the file"
+[manager]
+prepend_keymap = [
+  { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = "p", run = "plugin smart-paste", desc = "Paste into the hovered directory or CWD" },
 
-[[manager.prepend_keymap]]
-on = ["<Enter>"]
-run = "plugin --sync smart-enter"
-desc = "Enter the child directory, or open the file"
 
-[[manager.prepend_keymap]]
-on = ["<Enter>"]
-run = "plugin --sync smart-enter"
-desc = "Enter the child directory, or open the file"
+  { on = "t", run = "plugin smart-tab", desc = "Create a tab and enter the hovered directory" },
 
-[[manager.prepend_keymap]]
-on = "p"
-run = "plugin --sync smart-paste"
-desc = "Paste into the hovered directory or CWD"
 
-[[input.prepend_keymap]]
-on = "<Esc>"
-run = "close"
-desc = "Cancel input"
+  { on = "H", run = "tab_switch -1 --relative", desc = "Switch to the previous tab" },
+  { on = "L", run = "tab_switch 1 --relative", desc = "Switch to the next tab" },
 
-[[manager.prepend_keymap]]
-on = ["H"]
-run = "tab_switch -1 --relative"
-desc = "Switch to the previous tab"
+  # jump-to-char plugin
+  { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 
-[[manager.prepend_keymap]]
-on = ["L"]
-run = "tab_switch 1 --relative"
-desc = "Switch to the next tab"
+  # relative-motions plugin
+  { on = "1", run = "plugin relative-motions --args=1", desc = "Move in relative steps" },
+  { on = "2", run = "plugin relative-motions --args=2", desc = "Move in relative steps" },
+  { on = "3", run = "plugin relative-motions --args=3", desc = "Move in relative steps" },
+  { on = "4", run = "plugin relative-motions --args=4", desc = "Move in relative steps" },
+  { on = "5", run = "plugin relative-motions --args=5", desc = "Move in relative steps" },
+  { on = "6", run = "plugin relative-motions --args=6", desc = "Move in relative steps" },
+  { on = "7", run = "plugin relative-motions --args=7", desc = "Move in relative steps" },
+  { on = "8", run = "plugin relative-motions --args=8", desc = "Move in relative steps" },
+  { on = "9", run = "plugin relative-motions --args=9", desc = "Move in relative steps" },
 
-# jump-to-char plugin
-[[manager.prepend_keymap]]
-on = "f"
-run = "plugin jump-to-char"
-desc = "Jump to char"
 
-# relative-motions plugin
-[[manager.prepend_keymap]]
-on = ["1"]
-run = "plugin relative-motions --args=1"
-desc = "Move in relative steps"
+  { on = [
+    "<C-o>",
+  ], run = '''
+    shell 'dragon -x -i -T "$1"' --confirm
+''' },
+]
 
-[[manager.prepend_keymap]]
-on = ["2"]
-run = "plugin relative-motions --args=2"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["3"]
-run = "plugin relative-motions --args=3"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["4"]
-run = "plugin relative-motions --args=4"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["5"]
-run = "plugin relative-motions --args=5"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["6"]
-run = "plugin relative-motions --args=6"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["7"]
-run = "plugin relative-motions --args=7"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["8"]
-run = "plugin relative-motions --args=8"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["9"]
-run = "plugin relative-motions --args=9"
-desc = "Move in relative steps"
+# [[manager.prepend_keymap]]
+# on = ["l"]
+# run = "plugin --sync smart-enter"
+# desc = "Enter the child directory, or open the file"
+#
+# [[manager.prepend_keymap]]
+# on = ["<Enter>"]
+# run = "plugin --sync smart-enter"
+# desc = "Enter the child directory, or open the file"
+#
+# [[manager.prepend_keymap]]
+# on = ["<Enter>"]
+# run = "plugin --sync smart-enter"
+# desc = "Enter the child directory, or open the file"
+#
+# [[manager.prepend_keymap]]
+# on = "p"
+# run = "plugin --sync smart-paste"
+# desc = "Paste into the hovered directory or CWD"
+#
+# [[input.prepend_keymap]]
+# on = "<Esc>"
+# run = "close"
+# desc = "Cancel input"
+#
+# [[manager.prepend_keymap]]
+# on = ["H"]
+# run = "tab_switch -1 --relative"
+# desc = "Switch to the previous tab"
+#
+# [[manager.prepend_keymap]]
+# on = ["L"]
+# run = "tab_switch 1 --relative"
+# desc = "Switch to the next tab"
+#
+# # jump-to-char plugin
+# [[manager.prepend_keymap]]
+# on = "f"
+# run = "plugin jump-to-char"
+# desc = "Jump to char"
+#
+# # relative-motions plugin
+# [[manager.prepend_keymap]]
+# on = ["1"]
+# run = "plugin relative-motions --args=1"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["2"]
+# run = "plugin relative-motions --args=2"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["3"]
+# run = "plugin relative-motions --args=3"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["4"]
+# run = "plugin relative-motions --args=4"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["5"]
+# run = "plugin relative-motions --args=5"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["6"]
+# run = "plugin relative-motions --args=6"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["7"]
+# run = "plugin relative-motions --args=7"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["8"]
+# run = "plugin relative-motions --args=8"
+# desc = "Move in relative steps"
+#
+# [[manager.prepend_keymap]]
+# on = ["9"]
+# run = "plugin relative-motions --args=9"
+# desc = "Move in relative steps"

@@ -7,13 +7,34 @@ return {
       opts = {
         servers = {
           jdtls = {
-            -- Your custom jdtls settings goes here
+            settings = {
+              java = {
+                configuration = {
+                  runtimes = {
+                    {
+                      name = "JavaSE-17",
+                      path = "/Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home",
+                      default = true,
+                    },
+                  },
+                },
+              },
+            },
           },
         },
         setup = {
           jdtls = function()
             require("java").setup({
-              -- Your custom nvim-java configuration goes here
+              root_markers = {
+                "settings.gradle",
+                "settings.gradle.kts",
+                "pom.xml",
+                "build.gradle",
+                "mvnw",
+                "gradlew",
+                "build.gradle",
+                "build.gradle.kts",
+              },
             })
           end,
         },

@@ -1,0 +1,56 @@
+font-family = Iosevka Custom
+font-style = Medium
+font-size = 14
+font-thicken = false
+
+keybind = ctrl+'=new_split:right
+keybind = ctrl+;=new_split:down
+
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+unfocused-split-opacity = 0.5
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+
+cursor-style = block
+cursor-style-blink = false
+cursor-color = ffffff
+
+
+shell-integration = fish
+shell-integration-features = no-cursor
+
+
+quit-after-last-window-closed=true
+window-width = 120
+window-height = 45
+window-padding-x = 4
+window-padding-y = 4
+window-vsync = true
+
+theme = Rose-pine-moon
+background-opacity = 0.8
+background-blur-radius = 40
+
+selection-background = 4a456d
+
+custom-shader-animation = true
+macos-option-as-alt = true
+
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+unfocused-split-opacity = 1.0
+
+macos-titlebar-style = hidden
+
+
+
+

@@ -8,45 +8,60 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 
 		-- for monospaced characters
 		{
-			family = "Iosevka Custom",
 			-- 	family = "JetBrainsMonoNL Nerd Font Mono",
+			family = "Iosevka Custom",
+			weight = "Regular",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+		},
+		{
+			family = "Sarasa Mono K nerd font",
 			weight = "Regular",
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 		},
 
-		-- for symbols and monospaced korean characters
 		{
-			family = "Sarasa Mono K Nerd Font",
-			-- 	family = "D2CodingLigature Nerd Font Mono",
+			family = "Sarasa Mono J",
+			weight = "Regular",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+		},
+		{
+			family = "Sarasa Mono SC",
 			weight = "Regular",
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 		},
 	})
 
-	config.font_size = 16
+	config.font_size = 15
 	-- config.line_height = 1.03
 
 	config.front_end = "WebGpu"
-
-	-- config.color_scheme = "Black Metal (base16)"
 	-- config.color_scheme = "terafox"
 	-- config.color_scheme = "Maia (Gogh)"
-	-- config.color_scheme = "Rosé Pine Moon (Gogh)"
+	config.color_scheme = "Rosé Pine Moon (Gogh)"
 
 	config.colors = {
-		ansi = { "#393552", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
-		brights = { "#6e6a86", "#eb6f92", "#3e8fb0", "#f6c177", "#9ccfd8", "#c4a7e7", "#ea9a97", "#e0def4" },
-
-		foreground = "#e0def4",
-		background = "#232136",
-		-- background = "#1f1f28",
-
-		selection_fg = "#e0def4",
-		selection_bg = "#44415a",
-
-		cursor_bg = "#f0d2bd",
-		cursor_fg = "black",
-		cursor_border = "#f0d2bd",
+		-- ansi = {
+		-- 	"#393552",
+		-- 	"#fd6592",
+		-- 	"#3e8fb0",
+		-- 	"#f6c177",
+		-- 	"#8dd1da",
+		-- 	"#c4a7e7",
+		-- 	"#ffb1ae",
+		-- 	"#e0def4",
+		-- },
+		-- brights = { "#6e6a86", "#fd6592", "#3e8fb0", "#f6c177", "#8dd1da", "#c4a7e7", "#ffb1ae", "#e0def4" },
+		--
+		-- foreground = "#e0def4",
+		-- background = "#232131",
+		-- -- background = "#242430",
+		--
+		-- selection_fg = "#e0def4",
+		-- selection_bg = "#44415a",
+		--
+		-- cursor_bg = "#f0d2bd",
+		-- cursor_fg = "black",
+		-- cursor_border = "#f0d2bd",
 
 		-- tab styles
 		tab_bar = {
@@ -70,15 +85,18 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 		},
 	}
 
+	config.initial_rows = 48
+	config.initial_cols = 120
+
 	config.window_frame = {
-		font = wezterm.font({ family = "Pretendard jp variable", italic = false, weight = "DemiBold" }),
+		font = wezterm.font({ family = "Pretendard jp variable", italic = false, weight = "Regular" }),
 		font_size = 14.0,
 		active_titlebar_bg = "none",
 		inactive_titlebar_bg = "none",
 	}
 	config.window_padding = {
 		left = 10,
-		right = 10,
+		right = 2,
 		top = 60,
 		bottom = 2,
 	}
@@ -89,7 +107,7 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	-- 	orientation = { Linear = { angle = -90.0 } },
 	-- 	colors = { "#242430" },
 	-- }
-	config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
+	config.window_decorations = "INTEGRATED_BUTTONS | RESIZE | MACOS_FORCE_ENABLE_SHADOW"
 	config.enable_tab_bar = true
 	config.tab_bar_at_bottom = true
 	config.show_new_tab_button_in_tab_bar = true
@@ -98,22 +116,25 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	-- config.show_close_tab_button_in_tabs = false -- nightly only for now
 
 	config.window_close_confirmation = "NeverPrompt"
-	config.window_background_opacity = 0.97
-	config.macos_window_background_blur = 60
 
+	config.window_background_opacity = 0.80
+	config.macos_window_background_blur = 60
 	config.cursor_blink_rate = 0
 	config.default_cursor_style = "BlinkingBlock"
-	config.animation_fps = 1
+	config.animation_fps = 120
+	config.max_fps = 120
 
+	-- config.enable_kitty_keyboard = true
+	-- config.enable_csi_u_key_encoding = false
 	config.keys = {
 		{
-			key = "w",
 			mods = "CMD",
-			action = wezterm.action.CloseCurrentTab({ confirm = false }),
+			key = "n",
+			action = act({ SpawnCommandInNewWindow = { cwd = wezterm.home_dir } }),
 		},
 		{
-			key = "n",
 			mods = "CMD",
+			key = "ㅜ",
 			action = act({ SpawnCommandInNewWindow = { cwd = wezterm.home_dir } }),
 		},
 		{
@@ -125,23 +146,33 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 			}),
 		},
 		{
-			key = ",",
 			mods = "CMD",
+			key = ",",
 			action = act.SpawnCommandInNewTab({
-				cwd = os.getenv("Users/ji/.wezterm.lua"),
-				set_environment_variables = {
-					TERM = "screen-256color",
-				},
-				args = {
-					os.getenv("SHELL"),
-					"-c",
-					"nvim " .. wezterm.shell_quote_arg(wezterm.config_file),
-				},
+				args = { "/opt/homebrew/bin/nvim", wezterm.config_file },
 			}),
-			-- other keys
+		},
+		{
+			key = ";",
+			mods = "CMD",
+			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		},
+		{
+			key = "'",
+			mods = "CMD",
+			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		},
+		-- Cycle panes
+		{ key = "l", mods = "CMD", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+		{ key = "h", mods = "CMD", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+		{ key = "k", mods = "CMD", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+		{ key = "j", mods = "CMD", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+		{
+			key = "w",
+			mods = "CMD",
+			action = wezterm.action.CloseCurrentPane({ confirm = true }),
 		},
 	}
-
 	return config
 end
 

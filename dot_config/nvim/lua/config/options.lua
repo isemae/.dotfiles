@@ -8,6 +8,7 @@ vim.g.maplocalleader = "\\"
 
 local opt = vim.opt
 
+opt.autochdir = true
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
@@ -22,7 +23,6 @@ opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
-opt.laststatus = 3 -- global statusline
 opt.list = true -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
@@ -45,6 +45,7 @@ opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
+opt.ttimeoutlen = 0
 opt.timeoutlen = 300
 opt.undofile = true
 opt.undolevels = 10000
@@ -66,7 +67,7 @@ opt.fillchars = {
   verthoriz = "▕",
   horiz = "▔",
   horizup = "▔",
-  horizdown = "▔",
+  horizdown = "▁",
 }
 opt.langmap = {
   "ㅁa",
@@ -97,19 +98,21 @@ opt.langmap = {
   "ㅋz",
 }
 -- Folding
-vim.opt.foldlevel = 99
-vim.opt.foldtext = "v:lua.require'lazyvim.util.ui'.foldtext()"
+opt.foldlevel = 99
+opt.foldtext = "v:lua.require'lazyvim.util.ui'.foldtext()"
 
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util.ui'.statuscolumn()]]
-end
+-- if vim.fn.has("nvim-0.9.0") == 1 then
+--   vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util.ui'.statuscolumn()]]
+-- end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
 if vim.fn.has("nvim-0.10") == 1 then
-  vim.opt.foldmethod = "expr"
-  vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+  opt.foldmethod = "expr"
+  opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 else
-  vim.opt.foldmethod = "indent"
+  opt.foldmethod = "indent"
 end
 
 vim.g.markdown_recommended_style = 0
+opt.rtp:append("/opt/homebrew/opt/fzf")
+-- opt.shell = "/opt/homebrew/bin/zsh"

@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+
 # term settings
 function dedup_path
     set -gx PATH (string split ':' $PATH | sort -u | string join ':')
@@ -30,7 +31,10 @@ else
     end
 end
 
-source ~/.config/fish/functions/_pure_prompt_new_line.fish
+set -x EDITOR /opt/homebrew/bin/nvim
+set -x PATH "/Applications/Spotify.app/Contents/MacOS:$PATH"
+set -x PATH "/Users/ji/.nvm/versions/node/v22.12.0/lib/node_modules:$PATH:$(npm bin -g)"
+# source ~/.config/fish/functions/_pure_prompt_new_line.fish
 
 alias fns="functions"
 set -U fish_greeting
@@ -40,6 +44,7 @@ set -g __fish_git_prompt_char_dirtystate '±'
 set -g theme_short_path no
 set -U pure_show_system_time false
 set -U pure_reverse_prompt_symbol_in_vimode true
+
 
 # fzf 
 # bind -M insert ç fzf-cd-widget
@@ -51,6 +56,8 @@ set -x FZF_DEFAULT_OPTS " \
 set -gx FZF_DEFAULT_COMMAND "fd . "
 set -gx FZF_ALT_C_COMMAND "fd -t d . $HOME"
 
+
+set -U fish_user_paths $fish_user_paths ~/.local/bin
 
 # Applications alias
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
@@ -69,6 +76,7 @@ alias czm="chezmoi"
 alias cz="chezmoi"
 
 # alias ls='ls --color=auto'
+alias convmv-nfc='convmv -f utf-8 -t utf-8 --nfc --notest'
 
 alias ls="lsd"
 alias lsa="ls -a"
@@ -87,6 +95,13 @@ alias py="python3"
 alias cat="bat"
 alias man="tldr"
 alias du="dust"
+alias lzg="lazygit"
+
+# basics
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias psd="pushd"
+alias ppd="popd"
 
 # Bindings
 bind \cd delete-char
@@ -96,6 +111,9 @@ bind \e\[1\;9C end-of-line # command+right
 bind \e\x7F backward-kill-word
 bind \e\[3\;3~ kill-word
 bind \ed kill-word
+
+set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home
+set -gx PATH $JAVA_HOME/bin:$PATH
 
 # zoxide init --cmd cd fish | source
 zoxide init fish | source
