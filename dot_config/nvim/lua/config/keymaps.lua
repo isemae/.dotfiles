@@ -37,9 +37,9 @@ map("i", "<Esc>[1;3C", "<C-Left>", { desc = "", remap = true })
 map("i", "<C-F>", "<Right>", { desc = "", remap = true })
 map("i", "<C-B>", "<Left>", { desc = "", remap = true })
 
--- to beginning/end of line
-map("i", "<C-e>", "<End>", { desc = "", remap = true })
-map("i", "<C-a>", "<Home>", { desc = "", remap = true })
+-- -- to beginning/end of line
+-- map("i", "<C-e>", "<End>", { desc = "", remap = true })
+-- map("i", "<C-a>", "<Home>", { desc = "", remap = true })
 
 -- typo
 vim.cmd([[
