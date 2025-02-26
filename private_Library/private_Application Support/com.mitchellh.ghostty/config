@@ -3,30 +3,26 @@ font-style = Medium
 font-size = 14
 font-thicken = false
 
-keybind = ctrl+'=new_split:right
-keybind = ctrl+;=new_split:down
+keybind = cmd+'=new_split:right
+keybind = cmd+;=new_split:down
 
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+l=goto_split:right
+macos-option-as-alt = true
+keybind = cmd+h=goto_split:left
+keybind = cmd+j=goto_split:bottom
+keybind = cmd+k=goto_split:top
+keybind = cmd+l=goto_split:right
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
-unfocused-split-opacity = 0.5
-
 adjust-underline-position = 40%
 adjust-underline-thickness = -60%
-
 
 cursor-style = block
 cursor-style-blink = false
 cursor-color = ffffff
 
-
 shell-integration = fish
 shell-integration-features = no-cursor
-
 
 quit-after-last-window-closed=true
 window-width = 120
@@ -44,13 +40,8 @@ selection-background = 4a456d
 custom-shader-animation = true
 macos-option-as-alt = true
 
-
 confirm-close-surface = false
 clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
 
 macos-titlebar-style = hidden
-
-
-
-
