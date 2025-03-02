@@ -1,8 +1,12 @@
 return {
   "stevearc/conform.nvim",
-  "nvim-lualine/lualine.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
   opts = {
-    require("conform").setup({
+    {
+      default_format_opts = {
+        lsp_format = "fallback",
+      },
       format_on_save = {
         -- These options will be passed to conform.format()
         timeout_ms = 500,
@@ -11,19 +15,31 @@ return {
 
       formatters_by_ft = {
         lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
+        go = { "goimports", "gofumpt" },
         python = { "isort", "black" },
-        -- You can customize some of the format options for the filetype (:help conform.format)
         rust = { "rustfmt", lsp_format = "fallback" },
-        typescript = { "prettierd" },
-        -- Conform will run the first available formatter
-        javascript = { "prettierd", "prettier", stop_after_first = true },
-        css = { "prettierd" },
-        json = { "prettierd" },
-        html = { "prettierd" },
+        javascript = { "prettierd", "prettier" },
+        typescript = { "prettierd", "eslint_d" },
+        javascriptreact = { "prettierd", "eslint_d" },
+        typescriptreact = { "prettierd", "eslint_d" },
         sql = { "sql-formatter" },
+        css = { "prettierd", "prettier" },
+        html = { "prettierd", "prettier" },
+        json = { "prettierd" },
+        yaml = { "prettierd", "prettier" },
+        markdown = { "prettierd", "prettier" },
+        graphql = { "prettierd", "prettier" },
+        ["_"] = { "trim_whitespace" },
       },
-    }),
+    },
+    config = function(_, opts)
+      local util = require("conform.util")
+      vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+      -- running eslint fix
+      util.add_formatter_args(require("conform.formatters.eslint_d"), { "--fix" })
+      require("conform").setup(opts)
+    end,
 
     formatters = {
       prettier = {

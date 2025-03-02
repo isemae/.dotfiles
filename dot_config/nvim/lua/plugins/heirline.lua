@@ -137,28 +137,28 @@ local config = function()
   NeoTestBlock = u.insert(NeoTestBlock, NeoTest, Space)
 
   local FileNameBlock = {
-    -- condition = function()
-    --   return #api.nvim_buf_get_name(0) > 0
-    -- end,
-    -- init = function(self)
-    --   self.filename = api.nvim_buf_get_name(0)
-    --   self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(
-    --     self.filename,
-    --     fn.fnamemodify(self.filename, ":e"),
-    --     { default = true }
-    --   )
-    -- end,
-    -- hl = function()
-    --   if conditions.is_active() then
-    --     return {
-    --       bg = colors.sumiInk5,
-    --     }
-    --   else
-    --     return {
-    --       bg = colors.sumiInk4,
-    --     }
-    --   end
-    -- end,
+    condition = function()
+      return #api.nvim_buf_get_name(0) > 0
+    end,
+    init = function(self)
+      self.filename = api.nvim_buf_get_name(0)
+      self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(
+        self.filename,
+        fn.fnamemodify(self.filename, ":e"),
+        { default = true }
+      )
+    end,
+    hl = function()
+      if conditions.is_active() then
+        return {
+          bg = colors.sumiInk5,
+        }
+      else
+        return {
+          bg = colors.sumiInk4,
+        }
+      end
+    end,
   }
   local FileIcon = {
     -- provider = function(self)
@@ -171,14 +171,14 @@ local config = function()
     -- end,
   }
   local FileName = {
-    -- provider = function(self)
-    --   local filename = fn.fnamemodify(self.filename, ":.")
-    --   if not conditions.width_percent_below(#filename, 0.25) then
-    --     filename = fn.pathshorten(filename, 3)
-    --   end
-    --   return filename
-    -- end,
-    -- hl = { fg = colors.oldWhite, bold = true },
+    provider = function(self)
+      local filename = fn.fnamemodify(self.filename, ":.")
+      if not conditions.width_percent_below(#filename, 0.25) then
+        filename = fn.pathshorten(filename, 3)
+      end
+      return filename
+    end,
+    hl = { fg = colors.oldWhite, bold = true },
   }
   local FileFlags = {
     --   {
@@ -206,17 +206,17 @@ local config = function()
     --   end,
   }
   local ActiveSep = {
-    --   hl = function()
-    --     if conditions.is_active() then
-    --       return { fg = colors.sumiInk3 }
-    --     else
-    --       return { fg = colors.sumiInk1 }
-    --     end
-    --   end,
+    hl = function()
+      if conditions.is_active() then
+        return { fg = colors.sumiInk3 }
+      else
+        return { fg = colors.sumiInk1 }
+      end
+    end,
   }
   FileNameBlock = u.insert(
     FileNameBlock,
-    -- u.insert(ActiveSep, LeftSep),
+    u.insert(ActiveSep, LeftSep),
     Space,
     unpack(FileFlags),
     u.insert(FileNameModifer, FileName, Space, FileIcon),
@@ -491,9 +491,7 @@ local config = function()
     winbar = Winbars,
     opts = {
       disable_winbar_cb = function(args)
-        return conditions.buffer_matches(winbar_inactive, args.buf)
-        -- or bo.ft == ""
-        -- or bo.buftype == ""
+        return conditions.buffer_matches(winbar_inactive, args.buf) or bo.ft == "" or bo.buftype == ""
       end,
     },
   })

@@ -1,35 +1,33 @@
+---@type LazySpec
 return {
   "mikavilpas/yazi.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
   event = "VeryLazy",
   keys = {
+    -- 👇 in this section, choose your own keymappings!
     {
-      "_",
-      function()
-        require("yazi").yazi()
-      end,
-      desc = "Open the file manager",
+      "<leader>-",
+      mode = { "n", "v" },
+      "<cmd>Yazi<cr>",
+      desc = "Open yazi at the current file",
     },
     {
+      -- Open in the current working directory
       "<leader>cw",
-      function()
-        require("yazi").yazi(nil, vim.fn.getcwd())
-      end,
+      "<cmd>Yazi cwd<cr>",
       desc = "Open the file manager in nvim's working directory",
     },
+    {
+      "<c-up>",
+      "<cmd>Yazi toggle<cr>",
+      desc = "Resume the last yazi session",
+    },
   },
+  ---@type YaziConfig | {}
   opts = {
-    open_for_directories = true,
-    hooks = {
-      --- @diagnostic disable: unused-local
-      yazi_closed_successfully = function(chosen_file, config, state)
-        -- changes cwd when navigating in yazi without selecting a file
-        if chosen_file == nil and state.last_directory.filename then
-          vim.fn.chdir(state.last_directory.filename)
-        end
-      end,
+    -- if you want to open yazi instead of netrw, see below for more info
+    open_for_directories = false,
+    keymaps = {
+      show_help = "<f1>",
     },
   },
 }

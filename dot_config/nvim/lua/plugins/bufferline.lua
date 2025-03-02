@@ -58,7 +58,7 @@ return {
           end,
           highlight = PanelHeading,
           text_align = "left",
-          separator = "▕",
+          separator = "▏",
         },
       },
 

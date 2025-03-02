@@ -8,6 +8,7 @@ vim.g.maplocalleader = "\\"
 
 local opt = vim.opt
 
+opt.laststatus = 3
 opt.autochdir = true
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
@@ -61,10 +62,10 @@ opt.fillchars = {
   foldsep = " ",
   diff = "╱",
   eob = " ",
-  vert = "▕",
-  vertright = "▕",
-  vertleft = "▕",
-  verthoriz = "▕",
+  vert = "▎",
+  vertright = "▎",
+  vertleft = "▎",
+  verthoriz = "▎",
   horiz = "▔",
   horizup = "▔",
   horizdown = "▁",
