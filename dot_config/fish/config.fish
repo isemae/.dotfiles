@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+if test -f ~/.config/fish/private.fish
+    source ~/.config/fish/private.fish
+end
 
 # term settings
 function dedup_path
@@ -34,6 +37,8 @@ end
 set -x EDITOR /opt/homebrew/bin/nvim
 set -x PATH "/Applications/Spotify.app/Contents/MacOS:$PATH"
 set -x PATH "/Users/ji/.nvm/versions/node/v22.12.0/lib/node_modules:$PATH:$(npm bin -g)"
+
+
 # source ~/.config/fish/functions/_pure_prompt_new_line.fish
 
 alias fns="functions"
@@ -44,6 +49,11 @@ set -g __fish_git_prompt_char_dirtystate '±'
 set -g theme_short_path no
 set -U pure_show_system_time false
 set -U pure_reverse_prompt_symbol_in_vimode true
+
+
+function ff
+    aerospace list-windows --all | fzf --bind 'enter:execute(fish -c "aerospace focus --window-id {1}")+abort'
+end
 
 
 # fzf 
@@ -96,6 +106,8 @@ alias cat="bat"
 alias man="tldr"
 alias du="dust"
 alias lzg="lazygit"
+alias lzs="lazysql"
+alias lzd="lazydocker"
 
 # basics
 alias ...='cd ../../'
@@ -117,3 +129,5 @@ set -gx PATH $JAVA_HOME/bin:$PATH
 
 # zoxide init --cmd cd fish | source
 zoxide init fish | source
+
+thefuck --alias | source

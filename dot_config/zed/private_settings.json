@@ -7,50 +7,132 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "kanagawa-wave",
-  "ui_font_family": "Pretendard JP Variable",
-  "buffer_font_family": "D2Coding Nerd",
-  "ui_font_features": {},
-  "buffer_font_features": {
-    "calt": false
-  },
-  "buffer_line_height": {
-    "custom": 1.45
-  },
-  "base_keymap": "VSCode",
-  "vim_mode": true,
-  "relative_line_numbers": true,
-  "ui_font_size": 18,
-  "buffer_font_size": 18,
-  "inlay_hints": {
-    "enabled": true,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true
-  },
-  "lsp": {
-    "rust-analyzer": {
-      "initialization_options": {
-        "inlayHints": {
-          "maxLength": null,
-          "lifetimeElisionHints": {
-            "useParameterNames": true,
-            "enable": "skip_trivial"
-          },
-          "closureReturnTypeHints": {
-            "enable": "always"
-          }
+    "features": {
+        "edit_prediction_provider": "zed"
+    },
+    "assistant": {
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-3-5-sonnet-latest"
+        },
+        "version": "2"
+    },
+    "theme": "kanagawa-wave",
+    "ui_font_family": "Pretendard JP Variable",
+    "buffer_font_family": "Iosevka Custom",
+    "buffer_font_fallbacks": ["Iosevka Custom"],
+    "ui_font_features": {},
+    "buffer_font_features": {
+        "calt": false
+    },
+    "buffer_line_height": {
+        "custom": 1.45
+    },
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "vim": {
+        "enable_bim_sneak": true
+    },
+    "relative_line_numbers": true,
+    "ui_font_size": 15,
+    "buffer_font_size": 15.0,
+    "inlay_hints": {
+        "enabled": true,
+        "show_type_hints": true,
+        "show_parameter_hints": true,
+        "show_other_hints": true
+    },
+    "cursor_blink": false,
+    "cursor_shape": "block",
+    "lsp": {
+        "tailwindcss-language-server": {
+            "settings": {
+                "classAttributes": ["class", "className", "ngClass", "styles"]
+            }
+        },
+        "rust-analyzer": {
+            "initialization_options": {
+                "checkOnSave": {
+                    "command": "clippy"
+                },
+                "inlayHints": {
+                    "maxLength": null,
+                    "lifetimeElisionHints": {
+                        "useParameterNames": true,
+                        "enable": "skip_trivial"
+                    },
+                    "closureReturnTypeHints": {
+                        "enable": "always"
+                    }
+                }
+            }
         }
-      }
+    },
+    "languages": {
+        // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
+        "TypeScript": {
+            // Refer https://github.com/jellydn/ts-inlay-hints for how to setup for Neovim and VSCode
+            "inlay_hints": {
+                "enabled": true,
+                "show_parameter_hints": false,
+                "show_other_hints": true,
+                "show_type_hints": true
+            }
+        },
+        "Python": {
+            "format_on_save": { "language_server": { "name": "ruff" } },
+            "formatter": { "language_server": { "name": "ruff" } },
+            "language_servers": ["pyright", "ruff"]
+        }
+    },
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "terminal": {
+        "blinking": "off",
+        "line_height": "standard",
+        "font_family": "Iosevka Custom"
+    },
+    "file_types": {
+        "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+        "JSON": ["json", "jsonc", "*.code-snippets"]
+    },
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        // above is default from Zed
+        "**/out",
+        "**/dist",
+        "**/.husky",
+        "**/.turbo",
+        "**/.vscode-test",
+        "**/.vscode",
+        "**/.next",
+        "**/.storybook",
+        "**/.tap",
+        "**/.nyc_output",
+        "**/report",
+        "**/node_modules"
+    ],
+    "project_panel": {
+        "button": true,
+        "dock": "left",
+        "git_status": true
+    },
+    "outline_panel": {
+        "dock": "right"
+    },
+    "collaboration_panel": {
+        "dock": "right"
+    },
+    "chat_panel": {
+        "dock": "right"
     }
-  },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "terminal": {
-    "blinking": "on",
-    "line_height": "standard",
-    "font_family": "D2CodingLigature Nerd Font Mono"
-  }
 }
