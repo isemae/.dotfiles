@@ -137,6 +137,7 @@ return {
       })
 
       local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
       vim.diagnostic.config({
         virtual_text = {
           spacing = 4,
